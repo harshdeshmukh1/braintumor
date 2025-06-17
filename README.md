@@ -12,7 +12,7 @@ To build an accurate and robust image classification model that assists in the e
 
 ## 🧠 Dataset
 
-- **Source:** Publicly available Brain Tumor Classification dataset from [Kaggle](https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection)  
+- **Source:** Publicly available Brain Tumor Classification dataset from Kaggle)  
 - **Classes:**  
   - `glioma_tumor`  
   - `meningioma_tumor`  
