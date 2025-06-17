@@ -1,74 +1,59 @@
-# Brain Tumor MRI Classification (Custom CNN, ResNet50, VGG16)
+# 🧠 Brain Tumor MRI Classification Using Xception
 
-This project aims to classify brain MRI images into four categories: **Glioma**, **Meningioma**, **Pituitary Tumor**, and **No Tumor**. It leverages both custom Convolutional Neural Networks and transfer learning using pretrained models like ResNet50 and VGG16.
-
----
-
-## 🔍 Goal
-
-To build an accurate and robust image classification model that assists in the early detection and categorization of brain tumors using MRI scans.
+This project focuses on the classification of brain MRI scans into four categories: **Glioma**, **Meningioma**, **Pituitary Tumor**, and **No Tumor**. A deep learning model based on the **Xception architecture** is used to achieve high diagnostic accuracy in medical imaging.
 
 ---
 
-## 🧠 Dataset
+## 🎯 Project Goal
 
-- **Source:** Publicly available Brain Tumor Classification dataset from Kaggle
-- https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset/data
-- **Classes:**  
-  - `glioma_tumor`  
-  - `meningioma_tumor`  
-  - `pituitary_tumor`  
-  - `no_tumor`  
-- **Format:** JPG images organized in folders by class  
-- **Preprocessing:** Resized to 150×150 RGB, normalized pixel values, applied augmentation for training
+To develop a deep learning-based medical image classifier capable of accurately detecting and classifying brain tumors using MRI scans. The aim is to assist in fast and reliable diagnosis.
 
 ---
 
-## 🏗️ Model Architectures
+## 🧠 Model and Performance
 
-### ✅ Custom CNN
-- 3 Convolutional + MaxPooling blocks
-- Dense layers with dropout
-- Achieved **95%** test accuracy
-
-### ✅ ResNet50 (Transfer Learning)
-- Pretrained on ImageNet, with frozen layers then fine-tuned
-- Achieved **99%** test accuracy
-
-### ✅ VGG16 (Transfer Learning)
-- Pretrained on ImageNet, similar process as ResNet50
-- Achieved **98%** test accuracy
+- Built upon the **Xception model** with additional custom dense layers and dropout for regularization.
+- Achieved **over 99% accuracy** on both validation and test datasets.
+- Outperforms traditional CNNs in both precision and generalization.
 
 ---
 
 ## ⚙️ Training Configuration
 
-- Loss: `categorical_crossentropy`  
-- Optimizer: `Adam`  
-- Batch size: 32  
-- Epochs: 10 (with `EarlyStopping` and `ModelCheckpoint`)  
-- Data Augmentation: rotation, zoom, shift, flip (via `ImageDataGenerator`)
+- **Optimizer**: Adamax  
+- **Loss Function**: Categorical Cross-Entropy  
+- **Regularization**: Dropout and EarlyStopping  
+- **Data Preparation**: Data augmentation using ImageDataGenerator  
+- **Epochs**: 10  
+- **Image Size**: 299x299x3
 
 ---
 
 ## 📊 Results
 
-| Model      | Accuracy |
-|------------|----------|
-| Custom CNN | 95%      |
-| ResNet50   | 99%      |
-| VGG16      | 98%      |
+- Achieved high classification metrics across all tumor types.
+- Evaluated using:
+  - Accuracy
+  - Classification Report
+  - Confusion Matrix
 
 ---
 
 ## 🧰 Technologies Used
 
-- Python 3  
+- Python  
 - TensorFlow  
 - Keras  
 - NumPy  
-- OpenCV  
+- Pandas  
 - Matplotlib  
+- Scikit-learn  
 
 ---
 
+## 📁 Dataset
+- https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset/data
+- The dataset consists of labeled MRI images categorized into four classes.
+- It is preprocessed and split into training, validation, and test sets using stratified sampling.
+
+---
